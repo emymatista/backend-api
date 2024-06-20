@@ -1,0 +1,16 @@
+#docker-compose file
+
+services:
+  backend_api:
+    container_name: backend_api
+    image: emyma/nest-mongo:0.0.3
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - '3000:3000'
+    environment:
+      - EXTERNAL_PORT=3000
+      - MONGO_ATLAS_USER=emymatista
+      - MONGO_ATLAS_PASSWORD=wjJZE0fNMwij2gk2
+      - MONGO_ATLAS_DB=pedidos
